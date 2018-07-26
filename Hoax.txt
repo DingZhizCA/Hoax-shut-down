@@ -1,0 +1,11 @@
+Option Explicit
+On Error Resume Next
+Dim answer
+Dim WshShell
+set WshShell = CreateObject ("wscript.Shell")
+WshShell.Run "Shutdown -f -s -t 60 -c 输入'端午节快乐',否则60s后关机~", 0
+Do While answer<>"端午节快乐"
+answer = InputBox("输入'端午节快乐'，否则60秒后关机~","老董注意！！！",,7000,5000)
+Loop
+WshShell.Run "Shutdown /a " , 0
+MsgBox "哈哈哈哈，端午节快乐！！！,",,"端午快乐"
